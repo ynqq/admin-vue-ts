@@ -1,0 +1,96 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  font-size: 16px;
+  font-family: '微软雅黑';
+  overflow: hidden;
+}
+
+:root {
+  --header-height: 60px;
+  --bg-color: #00baff;
+  --header-shadow: #00baff;
+}
+
+.dark:root {
+  --header-shadow: #444444;
+  --bg-color: transparent;
+}
+
+.fade-transform-leave-active,
+.fade-transform-enter-active {
+  transition: all 0.5s;
+}
+
+.fade-transform-enter {
+  opacity: 0;
+  transform: translateX(-120px);
+}
+
+.fade-transform-leave-to {
+  opacity: 0;
+  transform: translateX(120px);
+}
+
+.fade-transform-leave-active {
+  position: absolute;
+}
+
+.breadcrumb-enter-active,
+.breadcrumb-leave-active {
+  transition: all .5s;
+  width: 100%;
+}
+
+.breadcrumb-enter,
+.breadcrumb-leave-active {
+  opacity: 0;
+  transform: translateX(20px);
+}
+
+.breadcrumb-move {
+  transition: all .5s;
+}
+
+.breadcrumb-leave-active {
+  position: absolute;
+}
+
+
+
+.el-breadcrumb {
+  line-height: inherit;
+}
+
+.clearfix:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+.clearfix:before {
+  content: '';
+  display: table;
+}
+
+.mt20 {
+  margin-top: 20px;
+}
+
+.mt10 {
+  margin-top: 10px;
+}
+.ml10{
+  margin-left: 10px;
+}
+
+.pagination .el-pagination {
+  justify-content: flex-end;
+  margin-top: 20px;
+}
