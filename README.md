@@ -1,8 +1,6 @@
 # admin-model-ts
 
-## Project setup
-## Project setup
-## Project setup
+## Project-000111 setup
 ```
 yarn install
 ```
