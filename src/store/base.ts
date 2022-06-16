@@ -5,10 +5,10 @@ export interface BaseInter {
 }
 
 const useBaseStore = defineStore('base', {
-    state() {
-        return ({
+    state(): BaseInter {
+        return {
             menuCollapse: false
-        }) as BaseInter
+        }
     },
     actions: {
         toggle_menuCollapse() {

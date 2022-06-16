@@ -47,6 +47,13 @@ export default {
 }
 </script>
 <script setup lang="ts">
+interface UserItem {
+    name: string,
+    age: number
+}
+interface UserList {
+    [key: number]: UserItem
+}
 const load = ref(false)
 
 onMounted(() => {
@@ -69,8 +76,9 @@ const page = ref(1),
     pageNum = ref(10),
     total = ref(1000)
 
-const tableData = new Array(10).fill('').map(() => ({
+const tableData:UserList = new Array(10).fill('').map(() => ({
     name: '张三',
+    age: 18
 }))
 fetchUserList({
     page: page.value,

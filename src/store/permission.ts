@@ -8,10 +8,10 @@ export interface permissionInter {
 }
 
 const usePermissionStore = defineStore('permission', {
-    state(){
-        return ({
+    state(): permissionInter {
+        return {
             routes: []
-        }) as permissionInter
+        }
     },
     actions: {
         set_routes(value: RoutesInter) {
@@ -20,7 +20,7 @@ const usePermissionStore = defineStore('permission', {
         get_permission_routes() {
             this.set_routes(getRoutes().routes)
         },
-        clean_router(){
+        clean_router() {
             sessionStorage.clear()
             getRoutes()
         }

@@ -15,7 +15,7 @@ const throttle: (time: number) => UseFunInter = (time) => {
 
 const createT: (filter: UseFunInter, fun: UseFunInter) => unknown = (filter, fun) => {
     return function (...args: unknown[]) {
-        filter(() => fun(args))
+        filter(() => fun(...args))
     }
 }
 

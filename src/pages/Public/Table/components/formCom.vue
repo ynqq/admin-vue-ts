@@ -24,7 +24,6 @@ export default {
 const load = ref(false)
 const name = ref('')
 onMounted(() => {
-    console.log('???');
     setTimeout(() => {
         load.value = true
     }, 2000)
