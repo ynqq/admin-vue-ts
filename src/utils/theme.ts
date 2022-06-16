@@ -1,11 +1,22 @@
-import { useDark, useToggle } from "@vueuse/core"
+import { useDark, useToggle, usePreferredDark } from "@vueuse/core"
+import { WritableComputedRef } from "vue";
 
-export const useTheme = (toggleStorage?: boolean): void => {
-    const result = useToggle(useDark())()
-    if (!toggleStorage) return
-    if (result) {
-        localStorage.TestTheme = 'dark'
-    } else {
-        localStorage.TestTheme = ''
+export interface UseThemeInter {
+    isDark: WritableComputedRef<boolean>,
+    toggleDark: () => void
+}
+
+
+export const useTheme = (): UseThemeInter => {
+
+    const isDark = useDark({
+        storageKey: 'TestTheme'
+    })
+
+    const toggleDark = useToggle(isDark)
+
+    return {
+        isDark,
+        toggleDark
     }
 }

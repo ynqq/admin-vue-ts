@@ -24,7 +24,7 @@
     </el-menu-item>
 </template>
 <script lang="ts">
-import { computed, defineProps, getCurrentInstance, reactive, ref } from 'vue'
+import { computed, getCurrentInstance, reactive, ref } from 'vue'
 import { useRouter } from 'vue-router'
 import useBaseStore from '@/store/base'
 import { RoutesInter, RouterItem } from '@/router/index.d';

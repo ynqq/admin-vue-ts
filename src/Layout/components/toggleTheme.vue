@@ -1,14 +1,7 @@
 <template>
     <div class="toggleBox">
-        <el-switch
-            v-model="theme"
-            class="mt-2"
-            style="margin-left: 24px"
-            inline-prompt
-            :active-icon="Sunny"
-            :inactive-icon="Moon"
-            @change="handleChange"
-        />
+        <el-switch v-model="theme" class="mt-2" style="margin-left: 24px" inline-prompt :active-icon="Sunny"
+            :inactive-icon="Moon"  />
     </div>
 </template>
 
@@ -20,8 +13,8 @@ export default {
 }
 </script>
 <script setup lang="ts">
-const localTheme = localStorage.TestTheme
-const theme = ref(localTheme === 'dark')
+const { isDark } = useTheme()
+const theme = isDark
 
 const current = getCurrentInstance()
 const $icon = current?.appContext.config.globalProperties.$icons
@@ -29,9 +22,6 @@ const $icon = current?.appContext.config.globalProperties.$icons
 const Sunny = $icon['Sunny']
 const Moon = $icon['Moon']
 
-const handleChange = () => {
-    useTheme(true)
-}
 </script>
 
 <style lang="scss" scoped>

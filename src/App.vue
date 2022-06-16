@@ -10,10 +10,11 @@ import { useTheme } from './utils/theme'
 export default defineComponent({
     name: 'App',
     components: {},
-    created() {
-        if (localStorage.TestTheme === 'dark') {
+    mounted() {
+        
+        this.$nextTick(() => {
             useTheme()
-        }
+        })
     }
 })
 </script>

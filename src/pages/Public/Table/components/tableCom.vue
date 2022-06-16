@@ -40,6 +40,7 @@
     </div>
 </template>
 <script lang="ts">
+import { fetchUserList } from '@/Api';
 import { onMounted, ref } from 'vue'
 export default {
     name: 'TableCom',
@@ -71,6 +72,16 @@ const page = ref(1),
 const tableData = new Array(10).fill('').map(() => ({
     name: '张三',
 }))
+fetchUserList({
+    page: page.value,
+    pageNum: pageNum.value,
+    enable: true,
+    pagin: 1
+}).then(res => {
+    res.data.forEach((item) => {
+        console.log(item.name);
+    })
+})
 </script>
 
 <style lang="scss" scoped>
